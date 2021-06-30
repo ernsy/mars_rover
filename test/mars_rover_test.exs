@@ -5,6 +5,8 @@ defmodule MarsRoverTest do
   test "general behaviour tests" do
     assert test_init(["4 8", ["2", "3", "E", "LFRFF"]]) == {{4, 4}, "E", true}
     assert test_init(["4 8", ["0", "2", "N", "FFLFRFF"]]) == {{0, 4}, "W", false}
+    assert test_init(["4 8", ["2", "3", "N", "FLLFR"]]) == {{2, 3}, "W", true}
+    assert test_init(["4 8", ["1", "0", "S", "FFRLF"]]) == {{1, 0}, "S", false}
     assert test_init(["5 4", ["4", "4", "N", "F"]]) == {{4, 4}, "N", false}
     assert test_init(["4 5", ["4", "4", "E", "F"]]) == {{4, 4}, "E", false}
     assert test_init(["1 1", ["1", "1", "S", "FRFLF"]]) == {{0, 0}, "S", false}
